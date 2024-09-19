@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Your Name" />
+    <title>Car Website - About</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Reset default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background: url("Mercedes Brabus.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #35424a;
+        color: #fff;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+
+      header .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      header nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      header nav ul li {
+        margin: 0 10px;
+        transition: transform 0.3s ease;
+      }
+
+      header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+      }
+
+      header nav ul li a:hover {
+        color: #ffc107;
+      }
+
+      hr {
+        border: 0;
+        height: 1px;
+        background-color: red; /* Adjust color as needed */
+        width: auto; /* Initial width set to auto */
+        margin: 10px auto; /* Center the line and add spacing */
+      }
+
+      h2 {
+        text-align: center; /* Center align the header */
+        margin: 20px 0; /* Add margin above and below the header */
+      }
+      .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .contact-info p {
+        margin: 0;
+      }
+
+      .contact-info a {
+        color: #ffc107;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-info a:hover {
+        color: #fff;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+      }
+
+      .icons i {
+        font-size: 1.5em;
+        color: #fff;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .icons i:hover {
+        color: #ffc107;
+      }
+
+      main {
+        margin-top: 10px; /* Adjust for fixed header */
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+
+      section#about {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Add a slight background color to make the text more readable */
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      section#about h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #35424a;
+        transition: color 0.3s ease;
+      }
+
+      section#about p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #666;
+        transition: color 0.3s ease;
+      }
+
+      section#managers {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Add a slight background color to make the text more readable */
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      section#managers h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #35424a;
+        transition: color 0.3s ease;
+      }
+
+      section#managers .manager {
+        display: inline-block;
+        width: 200px;
+        margin: 20px; /* Add space between each manager block */
+        text-align: center;
+        transition: transform 0.3s ease;
+        animation: fadeIn 1s ease;
+      }
+
+      section#managers .manager img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      section#managers .manager:hover img {
+        transform: scale(1.1);
+      }
+
+      section#managers .manager h4 {
+        font-size: 1.2em;
+        color: #35424a;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+
+      section#managers .manager p {
+        font-size: 1em;
+        color: #666;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+      }
+
+      footer {
+        background-color: #35424a;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        clear: both;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .footer-links div {
+        flex: 1;
+        margin: 0 10px;
+      }
+
+      .footer-links h4 {
+        color: #ffc107;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .footer-links p {
+        color: #ccc;
+        font-size: 1em;
+        line-height: 1.6;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-50px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animations */
+      header {
+        animation: slideInDown 0.5s ease;
+      }
+
+      header .logo,
+      header nav ul li,
+      .contact-info,
+      .icons {
+        animation: fadeIn 1s ease;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff6347; /* Tomato color for the logo */
+        animation: fadeIn 1s ease;
+      }
+
+      main {
+        animation: fadeIn 1s ease;
+      }
+
+      section#about {
+        animation: slideInDown 0.5s ease;
+      }
+
+      section#managers {
+        animation: slideInDown 0.5s ease;
+      }
+
+      footer {
+        animation: fadeIn 1s ease;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo"><i class="fas fa-car"></i> Benz</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="Login.html">Login</a></li>
+          <li><a href="Registration.html">Registration</a></li>
+          <li><a href="payment.html">Payment</a></li>
+        </ul>
+      </nav>
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-envelope"></i> Email:
+          <a href="mailto:godfreymukondo04@gmail.com"
+            >godfreymukondo04@gmail.com</a
+          >
+        </p>
+        <p>
+          <i class="fas fa-phone"></i> Phone:
+          <a href="tel:+27653552002">+27 65 355 2002</a>
+        </p>
+      </div>
+
+      <div class="icons">
+        <a href="https://www.facebook.com/carwebsite" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/carwebsite" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.twitter.com/carwebsite" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          Welcome to Car Website, where our passion for automobiles drives
+          everything we do. Established in 2010, our company has consistently
+          delivered top-notch vehicles that blend performance, reliability, and
+          style. We believe that every car tells a story, and we are here to
+          help you find the perfect chapter for your journey. Our commitment to
+          quality and customer satisfaction has made us a trusted name in the
+          automotive industry, ensuring that each car we offer meets the highest
+          standards of excellence.
+        </p>
+        <br />
+        <p>
+          Our team comprises experienced professionals dedicated to providing
+          you with an unparalleled car-buying experience. From our knowledgeable
+          sales staff to our skilled service technicians, we work together to
+          ensure your complete satisfaction. We offer a diverse range of
+          vehicles to suit every need and preference, whether you're looking for
+          a sleek sports car, a family-friendly SUV, or a reliable commuter. At
+          Car Website, we are more than just a dealership; we are a community of
+          car enthusiasts who share a love for the open road. Join us and
+          discover the joy of driving a car that truly fits your lifestyle.
+        </p>
+      </section>
+
+      <section id="managers">
+        <h2>Meet Our Managers</h2>
+        <hr />
+        <p>
+          Below are our list of our managers. Contact them for more information.
+        </p>
+        <div class="manager">
+          <img src="images/Cute1.jpg" alt="Manager 1" />
+          <h4>Daniel Mukondo</h4>
+          <p>Phone: +27 65 355 2002</p>
+          <p>Email: danielmukondo05@gmail.com</p>
+        </div>
+        <div class="manager">
+          <img src="images/CuteB.jpg" alt="Manager 2" />
+          <h4>Godfrey Mukondo</h4>
+          <p>Phone: +27 65 355 2002</p>
+          <p>Email: godfreymukondo04@gmail.com</p>
+        </div>
+        <div class="manager">
+          <img src="images/Cute1.jpg" alt="Manager 3" />
+          <h4>Victor Mlambo</h4>
+          <p>Phone:+27 65 355 2002</p>
+          <p>Email: victormlambo19@gmail.com</p>
+        </div>
+        <div class="manager">
+          <img src="images/CuteB.jpg" alt="Manager 4" />
+          <h4>Phidas Mukondo</h4>
+          <p>Phone: +27 65 355 2002</p>
+          <p>Email: phidasmukondo11@gmail.com</p>
+        </div>
+        <div class="manager">
+          <img src="images/Cute1.jpg" alt="Manager 5" />
+          <h4>William Mukondo</h4>
+          <p>Phone: +27 65 355 2002</p>
+          <p>Email: williammukondo12@mail.com</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <div>
+            <h4>Home</h4>
+            <p>
+              Welcome to Car Website. Explore our collection of high-performance
+              cars.
+            </p>
+          </div>
+          <div>
+            <h4>About</h4>
+            <p>
+              Learn more about Car Website and our commitment to providing
+              quality service.
+            </p>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <p>
+              Discover our comprehensive range of automotive services and
+              maintenance solutions.
+            </p>
+          </div>
+          <div>
+            <h4>Testimonials</h4>
+            <p>
+              Read what our customers have to say about their experiences with
+              Car Website.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>&copy; 2024 Car Website. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

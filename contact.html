@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Your Name" />
+    <title>Car Website - Contact</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Reset default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: #35424a;
+        color: #fff;
+        padding: 10px 0;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+      }
+
+      header nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        display: flex;
+      }
+
+      header nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+        transition: transform 0.3s ease;
+      }
+
+      header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+      }
+
+      header nav ul li a:hover {
+        color: #ffc107;
+      }
+
+      header .contact-info {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+
+      header .contact-info p {
+        margin: 0 10px;
+        font-size: 0.9em;
+        color: #fff;
+      }
+
+      header .contact-info a {
+        color: #ffc107;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      header .contact-info a:hover {
+        color: #fff;
+      }
+
+      header .icons {
+        display: flex;
+        align-items: center;
+      }
+
+      header .icons i {
+        font-size: 1.5em;
+        color: #fff;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      header .icons i:hover {
+        color: #ffc107;
+      }
+
+      main {
+        margin-top: 60px; /* Adjust for sticky header */
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+
+      section#contact {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      section#contact h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: #35424a;
+        transition: color 0.3s ease;
+      }
+
+      section#contact form {
+        max-width: 600px;
+        margin: 0 auto;
+        animation: fadeIn 1s ease;
+      }
+
+      section#contact form label {
+        display: block;
+        margin-bottom: 8px;
+        color: #35424a;
+        font-weight: bold;
+      }
+
+      section#contact form input[type="text"],
+      section#contact form input[type="email"],
+      section#contact form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+        transition: border-color 0.3s ease;
+      }
+
+      section#contact form input[type="text"]:focus,
+      section#contact form input[type="email"]:focus,
+      section#contact form textarea:focus {
+        outline: none;
+        border-color: #35424a;
+      }
+
+      section#contact form textarea {
+        resize: vertical;
+      }
+
+      section#contact form button[type="submit"] {
+        background-color: #35424a;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          transform 0.3s ease;
+        animation: slideInRight 1s ease;
+      }
+
+      section#contact form button[type="submit"]:hover {
+        background-color: #ffc107;
+        color: #35424a;
+        transform: scale(1.05);
+      }
+
+      footer {
+        background-color: #35424a;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        clear: both;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+        animation: fadeIn 1s ease;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-50px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animations */
+      header {
+        animation: slideInDown 0.5s ease;
+      }
+
+      header .logo,
+      header nav ul li {
+        animation: fadeIn 1s ease;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff6347; /* Tomato color for the logo */
+        animation: fadeIn 1s ease;
+      }
+
+      main {
+        animation: fadeIn 1s ease;
+      }
+
+      section#contact {
+        animation: slideInDown 0.5s ease;
+      }
+
+      footer {
+        background-color: #35424a;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        clear: both;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .footer-links div {
+        flex: 1;
+        margin: 0 10px;
+      }
+
+      .footer-links h4 {
+        color: #ffc107;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .footer-links p {
+        color: #ccc;
+        font-size: 1em;
+        line-height: 1.6;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Benz</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="Login.html">Login</a></li>
+          <li><a href="Registration.html">Registration</a></li>
+          <li><a href="payment.html">Payment</a></li>
+        </ul>
+      </nav>
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-envelope"></i> Email:
+          <a href="mailto:godfreymukondo04@gmail.com"
+            >godfreymukondo04@gmail.com</a
+          >
+        </p>
+        <p>
+          <i class="fas fa-phone"></i> Phone:
+          <a href="tel:+27653552002">+27 65 355 2002</a>
+        </p>
+      </div>
+
+      <div class="icons">
+        <a href="https://www.facebook.com/carwebsite" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/carwebsite" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.twitter.com/carwebsite" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
+    </header>
+
+    <main>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <div>
+            <h4>Home</h4>
+            <p>
+              Welcome to Car Website. Explore our collection of high-performance
+              cars.
+            </p>
+          </div>
+          <div>
+            <h4>About</h4>
+            <p>
+              Learn more about Car Website and our commitment to providing
+              quality service.
+            </p>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <p>
+              Discover our comprehensive range of automotive services and
+              maintenance solutions.
+            </p>
+          </div>
+          <div>
+            <h4>Testimonials</h4>
+            <p>
+              Read what our customers have to say about their experiences with
+              Car Website.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>&copy; 2024 Car Website. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
