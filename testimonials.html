@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Your Name" />
+    <title>Car Website - Testimonials</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Reset default margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        color: #333;
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #35424a;
+        color: #fff;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+
+      header .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-right: 20px;
+        transition: color 0.3s ease;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff6347; /* Tomato color for the logo */
+        animation: fadeIn 1s ease;
+      }
+
+      header nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      header nav ul li {
+        margin: 0 10px;
+        transition: transform 0.3s ease;
+      }
+
+      header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+      }
+
+      header nav ul li a:hover {
+        color: #ffc107;
+      }
+
+      header .icons {
+        display: flex;
+        align-items: center;
+      }
+
+      header .icons i {
+        font-size: 1.5em;
+        color: #fff;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      header .icons i:hover {
+        color: #ffc107;
+      }
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .contact-info p {
+        margin: 0;
+      }
+
+      .contact-info a {
+        color: #ffc107;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-info a:hover {
+        color: #fff;
+      }
+
+      main {
+        margin-top: 80px; /* Adjust for fixed header */
+        padding: 20px;
+        transition: opacity 0.3s ease;
+      }
+
+      section#testimonials {
+        text-align: center;
+        padding: 60px 0;
+      }
+
+      section#testimonials h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        color: #35424a;
+        transition: color 0.3s ease;
+      }
+
+      .testimonial {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #666;
+        text-align: left;
+      }
+
+      /* Hover effects */
+      .testimonial:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .testimonial img:hover {
+        transform: scale(1.1);
+      }
+
+      footer {
+        background-color: #35424a;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        transition: background-color 0.3s ease;
+      }
+
+      footer .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      footer .footer-links li {
+        transition: transform 0.3s ease;
+      }
+
+      footer .footer-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1em;
+        transition: color 0.3s ease;
+      }
+
+      footer .footer-links li a:hover {
+        color: #ffc107;
+      }
+
+      .footer-links h4 {
+        color: #ffc107;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-50px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animations */
+      header {
+        animation: slideInDown 0.5s ease;
+      }
+
+      header .logo,
+      header nav ul li,
+      .contact-info {
+        animation: fadeIn 1s ease;
+      }
+
+      main {
+        animation: fadeIn 1s ease;
+      }
+
+      section#testimonials {
+        animation: slideInDown 0.5s ease;
+      }
+
+      footer {
+        animation: fadeIn 1s ease;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Benz</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="payment.html">Payment</a></li>
+        </ul>
+      </nav>
+      <div class="contact-info">
+        <p>
+          <i class="fas fa-envelope"></i> Email:
+          <a href="mailto:godfreymukondo04@gmail.com"
+            >godfreymukondo04@gmail.com</a
+          >
+        </p>
+        <p>
+          <i class="fas fa-phone"></i> Phone:
+          <a href="tel:+27653552002">+27 65 355 2002</a>
+        </p>
+      </div>
+
+      <div class="icons">
+        <a href="https://www.facebook.com/carwebsite" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/carwebsite" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.twitter.com/carwebsite" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
+    </header>
+
+    <main>
+      <section id="testimonials">
+        <h2>Customer Testimonials</h2>
+        <div class="testimonial">
+          <img src="images/error.png.jpeg" alt="Person 1" />
+          <p>
+            "The car I bought here exceeded my expectations. Highly
+            recommended!"
+          </p>
+        </div>
+        <div class="testimonial">
+          <img src="images/error.png.jpeg" alt="Person 2" />
+          <p>
+            "Excellent service and quality cars. Will definitely come back for
+            my next purchase."
+          </p>
+        </div>
+
+        <div class="testimonial">
+          <img src="images/error.png.jpeg" alt="Person 2" />
+          <p>
+            "Excellent service and quality cars. Will definitely come back for
+            my next purchase."
+          </p>
+        </div>
+        <!-- Add more testimonials as needed -->
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <div>
+            <h4>Home</h4>
+            <p>
+              Welcome to Car Website. Explore our collection of high-performance
+              cars.
+            </p>
+          </div>
+          <div>
+            <h4>About</h4>
+            <p>
+              Learn more about Car Website and our commitment to providing
+              quality service.
+            </p>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <p>
+              Discover our comprehensive range of automotive services and
+              maintenance solutions.
+            </p>
+          </div>
+          <div>
+            <h4>Testimonials</h4>
+            <p>
+              Read what our customers have to say about their experiences with
+              Car Website.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p>&copy; 2024 Car Website. All rights reserved.</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
